@@ -96,9 +96,11 @@
     NSInteger countryIndex = [self.pickerView selectedRowInComponent:2];
 
     NSString *provice = self.provinceArray[proviceIndex][@"n"];
-    NSString *city = self.cityArray[cityIndex][@"n"];
-    NSString *country = self.countyArray[countryIndex][@"n"];
     
+    NSString *city = self.cityArray == nil && self.cityArray.count != 0 ? self.cityArray[cityIndex][@"n"] : @"";
+    
+    NSString *country = self.countyArray == nil && self.countyArray.count != 0 ? self.countyArray[countryIndex][@"n"] : @"";
+
     NSLog(@"%@,%@,%@",provice,city,country);
     
     // 弹出提示
