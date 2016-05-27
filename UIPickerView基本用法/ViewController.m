@@ -66,6 +66,7 @@
     return _pickerView;
 }
 
+// 作为TextField的弹出视图的工具条
 - (UIToolbar *)toolbar
 {
     if (_toolbar == nil) {
@@ -106,16 +107,20 @@
 #pragma mark - 加载数据
 - (void)loadData
 {
+    // 从MainBundle中加载文件
     NSString *path = [[NSBundle mainBundle] pathForResource:@"citylist" ofType:@"data"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSArray  *jsonArray = [NSJSONSerialization
                            JSONObjectWithData:data options:NSJSONReadingAllowFragments
                            error:nil];
+    // 取出默认的省市信息
     self.provinceArray = jsonArray;
     
+    // 取出默认的城市信息
     NSDictionary *provinceDict = [self.provinceArray firstObject];
     self.cityArray = provinceDict[@"l"];
     
+    // 取出默认的区信息
     NSDictionary *cityDict = [self.cityArray firstObject];
     self.countyArray = cityDict[@"l"];
 }
@@ -153,14 +158,17 @@
 //返回组件的标题
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
+        // 设置第0列的标题信息
         NSDictionary *provinceDict = [self.provinceArray objectAtIndex:row];
         NSString *name = provinceDict[@"n"];
         return name;
     } else if (component == 1) {
+        // 设置第1列的标题信息
         NSDictionary *cityDict = [self.cityArray objectAtIndex:row];
         NSString *name = cityDict[@"n"];
         return name;
     } else {
+        // 设置第2列的标题信息
         NSDictionary *countryDict = [self.countyArray objectAtIndex:row];
         NSString *name = countryDict[@"n"];
         return name;
@@ -170,10 +178,13 @@
 //选择器选择的方法  row：被选中的行
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    //选择第一列执行的方法
+    //选择第0列执行的方法
     if (component == 0) {
         [pickerView selectedRowInComponent:0];
         
+        /**
+         *  选中第0列时需要刷新第1列和第二列的数据
+         */
         NSDictionary *provinceDict = [self.provinceArray objectAtIndex:row];
         self.cityArray = provinceDict[@"l"];
         [pickerView reloadComponent:1];
@@ -185,6 +196,9 @@
     } else if (component == 1) {
         [pickerView selectedRowInComponent:1];
         
+        /**
+         *  选中第一列时需要刷新第二列的数据信息
+         */
         NSDictionary *cityDict = [self.cityArray objectAtIndex:row];
         self.countyArray = cityDict[@"l"];
         [pickerView reloadComponent:2];
@@ -193,7 +207,6 @@
         [pickerView selectedRowInComponent:2];
         
     }
-    //刷新第二列的信息
     
     
 }
