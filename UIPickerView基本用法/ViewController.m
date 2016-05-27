@@ -100,6 +100,19 @@
     NSString *country = self.countyArray[countryIndex][@"n"];
     
     NSLog(@"%@,%@,%@",provice,city,country);
+    
+    // 弹出提示
+    NSString *message = [NSString stringWithFormat:@"您选择的是:%@-%@-%@",provice,city,country];
+    
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        return;
+    }];
+    [alertVc addAction:cancel];
+    
+    [self presentViewController:alertVc animated:YES completion:nil];
+
 }
 
 
