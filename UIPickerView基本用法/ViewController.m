@@ -90,7 +90,16 @@
 // 点击了确定
 - (void)certain
 {
+    // 获取当前选中的信息
+    NSInteger proviceIndex = [self.pickerView selectedRowInComponent:0];
+    NSInteger cityIndex = [self.pickerView selectedRowInComponent:1];
+    NSInteger countryIndex = [self.pickerView selectedRowInComponent:2];
+
+    NSString *provice = self.provinceArray[proviceIndex][@"n"];
+    NSString *city = self.cityArray[cityIndex][@"n"];
+    NSString *country = self.countyArray[countryIndex][@"n"];
     
+    NSLog(@"%@,%@,%@",provice,city,country);
 }
 
 
