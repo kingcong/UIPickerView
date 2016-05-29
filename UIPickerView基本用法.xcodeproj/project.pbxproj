@@ -16,6 +16,7 @@
 		73150EA61CF7F02300BD47BD /* UIPickerView____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73150EA51CF7F02300BD47BD /* UIPickerView____Tests.m */; };
 		73150EB11CF7F02300BD47BD /* UIPickerView____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73150EB01CF7F02300BD47BD /* UIPickerView____UITests.m */; };
 		73150EBF1CF7F0DB00BD47BD /* citylist.data in Resources */ = {isa = PBXBuildFile; fileRef = 73150EBE1CF7F0DB00BD47BD /* citylist.data */; };
+		738373C81CFA7B780044C0A6 /* CWPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 738373C71CFA7B780044C0A6 /* CWPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		73150EB01CF7F02300BD47BD /* UIPickerView____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView____UITests.m"; sourceTree = "<group>"; };
 		73150EB21CF7F02300BD47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73150EBE1CF7F0DB00BD47BD /* citylist.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = citylist.data; sourceTree = "<group>"; };
+		738373C61CFA7B780044C0A6 /* CWPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWPickerView.h; sourceTree = "<group>"; };
+		738373C71CFA7B780044C0A6 /* CWPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 			children = (
 				73150E8E1CF7F02200BD47BD /* AppDelegate.h */,
 				73150E8F1CF7F02200BD47BD /* AppDelegate.m */,
+				738373C61CFA7B780044C0A6 /* CWPickerView.h */,
+				738373C71CFA7B780044C0A6 /* CWPickerView.m */,
 				73150E911CF7F02200BD47BD /* ViewController.h */,
 				73150E921CF7F02200BD47BD /* ViewController.m */,
 				73150E941CF7F02200BD47BD /* Main.storyboard */,
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738373C81CFA7B780044C0A6 /* CWPickerView.m in Sources */,
 				73150E931CF7F02200BD47BD /* ViewController.m in Sources */,
 				73150E901CF7F02200BD47BD /* AppDelegate.m in Sources */,
 				73150E8D1CF7F02200BD47BD /* main.m in Sources */,
@@ -500,6 +506,7 @@
 				73150EB71CF7F02300BD47BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73150EB81CF7F02300BD47BD /* Build configuration list for PBXNativeTarget "UIPickerView基本用法Tests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +515,7 @@
 				73150EBA1CF7F02300BD47BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73150EBB1CF7F02300BD47BD /* Build configuration list for PBXNativeTarget "UIPickerView基本用法UITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +524,7 @@
 				73150EBD1CF7F02300BD47BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
